@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true, // Required for packages/db-mongodb to build
+    "noEmit": false /* Do not emit outputs. */,
+    "emitDeclarationOnly": true,
+    "rootDir": "./src" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
+    "outDir": "./dist" /* Redirect output structure to the directory. */,
+    "types": ["node"],
+  },
+  "exclude": [
+    "dist",
+    "build",
+    "tests",
+    "test",
+    "node_modules",
+    "temp"
+  ],
+  /* Like tsconfig.build.json, but includes test directory and doesnt emit anything */
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "src/**/*.json"],
+  "ts-node": {
+    "swc": true
+  }
+}
