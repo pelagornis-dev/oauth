@@ -1,117 +1,118 @@
-export class ValidationUtils {
+export class DateUtils {
   /**
-   * Check if email format is valid
+   * Get current timestamp in milliseconds
    */
-  public static isValidEmail(email: string): boolean {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email.trim().toLowerCase());
+  public static now(): number {
+    return Date.now();
   }
 
   /**
-   * Check if password meets security requirements
+   * Get current date as ISO string
    */
-  public static isValidPassword(password: string): { valid: boolean; errors: string[] } {
-    const errors: string[] = [];
-    
-    if (password.length < 8) {
-      errors.push('Password must be at least 8 characters long');
-    }
-    
-    if (!/(?=.*[a-z])/.test(password)) {
-      errors.push('Password must contain at least one lowercase letter');
-    }
-    
-    if (!/(?=.*[A-Z])/.test(password)) {
-      errors.push('Password must contain at least one uppercase letter');
-    }
-    
-    if (!/(?=.*\d)/.test(password)) {
-      errors.push('Password must contain at least one number');
-    }
-    
-    if (!/(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/.test(password)) {
-      errors.push('Password must contain at least one special character');
-    }
-    
-    return {
-      valid: errors.length === 0,
-      errors
-    };
+  public static nowISO(): string {
+    return new Date().toISOString();
   }
 
   /**
-   * Check if URL is valid
+   * Add time to date
    */
-  public static isValidUrl(url: string): boolean {
+  public static addTime(date: Date, amount: number, unit: 'seconds' | 'minutes' | 'hours' | 'days'): Date {
+    const result = new Date(date);
+    
+    switch (unit) {
+      case 'seconds':
+        result.setSeconds(result.getSeconds() + amount);
+        break;
+      case 'minutes':
+        result.setMinutes(result.getMinutes() + amount);
+        break;
+      case 'hours':
+        result.setHours(result.getHours() + amount);
+        break;
+      case 'days':
+        result.setDate(result.getDate() + amount);
+        break;
+    }
+    
+    return result;
+  }
+
+  /**
+   * Check if date is expired
+   */
+  public static isExpired(date: Date): boolean {
+    return date.getTime() < Date.now();
+  }
+
+  /**
+   * Format date for display
+   */
+  public static formatForDisplay(date: Date, locale: string = 'en-US'): string {
+    return date.toLocaleDateString(locale, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }
+
+  /**
+   * Get time difference in human readable format
+   */
+  public static getTimeDifference(from: Date, to: Date = new Date()): string {
+    const diffMs = to.getTime() - from.getTime();
+    const diffSeconds = Math.floor(diffMs / 1000);
+    const diffMinutes = Math.floor(diffSeconds / 60);
+    const diffHours = Math.floor(diffMinutes / 60);
+    const diffDays = Math.floor(diffHours / 24);
+
+    if (diffDays > 0) {
+      return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+    } else if (diffHours > 0) {
+      return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+    } else if (diffMinutes > 0) {
+      return `${diffMinutes} minute${diffMinutes > 1 ? 's' : ''} ago`;
+    } else {
+      return 'Just now';
+    }
+  }
+
+  /**
+   * Check if date is today
+   */
+  public static isToday(date: Date): boolean {
+    const today = new Date();
+    return date.toDateString() === today.toDateString();
+  }
+
+  /**
+   * Get start of day
+   */
+  public static startOfDay(date: Date): Date {
+    const result = new Date(date);
+    result.setHours(0, 0, 0, 0);
+    return result;
+  }
+
+  /**
+   * Get end of day
+   */
+  public static endOfDay(date: Date): Date {
+    const result = new Date(date);
+    result.setHours(23, 59, 59, 999);
+    return result;
+  }
+
+  /**
+   * Parse ISO string safely
+   */
+  public static parseISO(isoString: string): Date | null {
     try {
-      new URL(url);
-      return true;
+      const date = new Date(isoString);
+      return isNaN(date.getTime()) ? null : date;
     } catch {
-      return false;
+      return null;
     }
-  }
-
-  /**
-   * Check if phone number is valid (basic validation)
-   */
-  public static isValidPhoneNumber(phone: string): boolean {
-    const phoneRegex = /^\+?[\d\s\-\(\)]{7,}$/;
-    return phoneRegex.test(phone.trim());
-  }
-
-  /**
-   * Sanitize string input to prevent XSS
-   */
-  public static sanitizeString(input: string): string {
-    return input
-      .replace(/[<>]/g, '') // Remove potential HTML tags
-      .replace(/['"]/g, '') // Remove quotes
-      .trim();
-  }
-
-  /**
-   * Check if MongoDB ObjectId is valid
-   */
-  public static isValidObjectId(id: string): boolean {
-    const objectIdRegex = /^[0-9a-fA-F]{24}$/;
-    return objectIdRegex.test(id);
-  }
-
-  /**
-   * Validate JSON Web Token format (basic structure check)
-   */
-  public static isValidJWTFormat(token: string): boolean {
-    const parts = token.split('.');
-    return parts.length === 3 && parts.every(part => part.length > 0);
-  }
-
-  /**
-   * Check if string contains only alphanumeric characters
-   */
-  public static isAlphanumeric(str: string): boolean {
-    const alphanumericRegex = /^[a-zA-Z0-9]+$/;
-    return alphanumericRegex.test(str);
-  }
-
-  /**
-   * Validate enum value
-   */
-  public static isValidEnumValue<T>(value: any, enumObject: T): value is T[keyof T] {
-    return Object.values(enumObject as any).includes(value);
-  }
-
-  /**
-   * Check if date string is valid
-   */
-  public static isValidDate(dateString: string): boolean {
-    const date = new Date(dateString);
-    return !isNaN(date.getTime());
-  }
-
-  /**
-   * Check if value is within range
-   */
-  public static isInRange(value: number, min: number, max: number): boolean {
-    return value >= min && value <= max;
   }
 }
