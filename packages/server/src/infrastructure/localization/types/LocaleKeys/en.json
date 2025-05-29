@@ -1,0 +1,86 @@
+{
+    "auth": {
+      "login": {
+        "title": "Sign In",
+        "email_placeholder": "Enter your email",
+        "password_placeholder": "Enter your password",
+        "submit_button": "Sign In",
+        "forgot_password": "Forgot your password?",
+        "no_account": "Don't have an account?",
+        "sign_up": "Sign up"
+      },
+      "register": {
+        "title": "Create Account",
+        "first_name_placeholder": "First name",
+        "last_name_placeholder": "Last name",
+        "email_placeholder": "Enter your email",
+        "password_placeholder": "Create a password",
+        "confirm_password_placeholder": "Confirm your password",
+        "submit_button": "Create Account",
+        "have_account": "Already have an account?",
+        "sign_in": "Sign in"
+      },
+      "oauth": {
+        "google_login": "Sign in with Google",
+        "continue_with_google": "Continue with Google"
+      },
+      "verification": {
+        "title": "Verify Your Email",
+        "message": "We've sent a verification link to your email address. Please check your inbox and click the link to verify your account.",
+        "resend_button": "Resend verification email"
+      },
+      "reset_password": {
+        "title": "Reset Password",
+        "message": "Enter your email address and we'll send you a link to reset your password.",
+        "submit_button": "Send Reset Link"
+      }
+    },
+    "errors": {
+      "validation": {
+        "required": "This field is required",
+        "invalid_email": "Please enter a valid email address",
+        "password_too_short": "Password must be at least 8 characters long",
+        "passwords_not_match": "Passwords do not match"
+      },
+      "auth": {
+        "invalid_credentials": "Invalid email or password",
+        "account_not_verified": "Please verify your email address before logging in",
+        "account_suspended": "Your account has been suspended",
+        "token_expired": "Authentication token has expired",
+        "token_invalid": "Invalid authentication token"
+      },
+      "general": {
+        "server_error": "An internal server error occurred",
+        "not_found": "Resource not found",
+        "forbidden": "Access denied"
+      }
+    },
+    "success": {
+      "auth": {
+        "login": "Successfully logged in",
+        "register": "Account created successfully",
+        "logout": "Successfully logged out",
+        "password_reset": "Password reset email sent",
+        "email_verified": "Email verified successfully"
+      }
+    },
+    "email": {
+      "verification": {
+        "subject": "Welcome! Please verify your email address",
+        "greeting": "Hi {{firstName}},",
+        "message": "Thank you for creating an account. Please click the button below to verify your email address and activate your account.",
+        "button": "Verify Email Address"
+      },
+      "reset_password": {
+        "subject": "Reset your password",
+        "greeting": "Hi {{firstName}},",
+        "message": "We received a request to reset your password. Click the button below to create a new password.",
+        "button": "Reset Password"
+      },
+      "welcome": {
+        "subject": "Welcome to Pelagornis OAuth!",
+        "greeting": "Hi {{firstName}},",
+        "message": "Welcome to Pelagornis OAuth! Your account has been successfully verified and you can now start using our services."
+      }
+    }
+  }

@@ -1,0 +1,86 @@
+{
+    "auth": {
+      "login": {
+        "title": "サインイン",
+        "email_placeholder": "メールアドレスを入力してください",
+        "password_placeholder": "パスワードを入力してください",
+        "submit_button": "サインイン",
+        "forgot_password": "パスワードをお忘れですか？",
+        "no_account": "アカウントをお持ちではありませんか？",
+        "sign_up": "サインアップ"
+      },
+      "register": {
+        "title": "アカウント作成",
+        "first_name_placeholder": "名",
+        "last_name_placeholder": "姓",
+        "email_placeholder": "メールアドレスを入力してください",
+        "password_placeholder": "パスワードを作成してください",
+        "confirm_password_placeholder": "パスワードを確認してください",
+        "submit_button": "アカウント作成",
+        "have_account": "すでにアカウントをお持ちですか？",
+        "sign_in": "サインイン"
+      },
+      "oauth": {
+        "google_login": "Googleでサインイン",
+        "continue_with_google": "Googleで続行"
+      },
+      "verification": {
+        "title": "メール認証",
+        "message": "認証リンクをメールアドレスに送信しました。受信箱を確認し、リンクをクリックしてアカウントを認証してください。",
+        "resend_button": "認証メールを再送信"
+      },
+      "reset_password": {
+        "title": "パスワードリセット",
+        "message": "メールアドレスを入力すると、パスワードリセット用のリンクをお送りします。",
+        "submit_button": "リセットリンクを送信"
+      }
+    },
+    "errors": {
+      "validation": {
+        "required": "このフィールドは必須です",
+        "invalid_email": "有効なメールアドレスを入力してください",
+        "password_too_short": "パスワードは最低8文字である必要があります",
+        "passwords_not_match": "パスワードが一致しません"
+      },
+      "auth": {
+        "invalid_credentials": "メールアドレスまたはパスワードが無効です",
+        "account_not_verified": "ログイン前にメールアドレスを認証してください",
+        "account_suspended": "アカウントが停止されています",
+        "token_expired": "認証トークンが期限切れです",
+        "token_invalid": "無効な認証トークンです"
+      },
+      "general": {
+        "server_error": "内部サーバーエラーが発生しました",
+        "not_found": "リソースが見つかりません",
+        "forbidden": "アクセスが拒否されました"
+      }
+    },
+    "success": {
+      "auth": {
+        "login": "ログインに成功しました",
+        "register": "アカウントが正常に作成されました",
+        "logout": "ログアウトに成功しました",
+        "password_reset": "パスワードリセットメールを送信しました",
+        "email_verified": "メールが正常に認証されました"
+      }
+    },
+    "email": {
+      "verification": {
+        "subject": "ようこそ！メールアドレスを認証してください",
+        "greeting": "{{firstName}}様、",
+        "message": "アカウントを作成していただき、ありがとうございます。下のボタンをクリックしてメールアドレスを認証し、アカウントを有効化してください。",
+        "button": "メールアドレスを認証"
+      },
+      "reset_password": {
+        "subject": "パスワードをリセットしてください",
+        "greeting": "{{firstName}}様、",
+        "message": "パスワードリセットのリクエストを受け取りました。下のボタンをクリックして新しいパスワードを作成してください。",
+        "button": "パスワードをリセット"
+      },
+      "welcome": {
+        "subject": "Pelagornis OAuthへようこそ！",
+        "greeting": "{{firstName}}様、",
+        "message": "Pelagornis OAuthへようこそ！アカウントが正常に認証され、サービスのご利用を開始できます。"
+      }
+    }
+  }

@@ -1,0 +1,86 @@
+{
+    "auth": {
+      "login": {
+        "title": "登录",
+        "email_placeholder": "请输入您的邮箱",
+        "password_placeholder": "请输入您的密码",
+        "submit_button": "登录",
+        "forgot_password": "忘记密码？",
+        "no_account": "还没有账户？",
+        "sign_up": "注册"
+      },
+      "register": {
+        "title": "创建账户",
+        "first_name_placeholder": "名",
+        "last_name_placeholder": "姓",
+        "email_placeholder": "请输入您的邮箱",
+        "password_placeholder": "创建密码",
+        "confirm_password_placeholder": "确认密码",
+        "submit_button": "创建账户",
+        "have_account": "已有账户？",
+        "sign_in": "登录"
+      },
+      "oauth": {
+        "google_login": "使用Google登录",
+        "continue_with_google": "继续使用Google"
+      },
+      "verification": {
+        "title": "验证您的邮箱",
+        "message": "我们已向您的邮箱发送了验证链接。请检查收件箱并点击链接以验证您的账户。",
+        "resend_button": "重新发送验证邮件"
+      },
+      "reset_password": {
+        "title": "重置密码",
+        "message": "输入您的邮箱地址，我们将向您发送重置密码的链接。",
+        "submit_button": "发送重置链接"
+      }
+    },
+    "errors": {
+      "validation": {
+        "required": "此字段为必填项",
+        "invalid_email": "请输入有效的邮箱地址",
+        "password_too_short": "密码至少需要8个字符",
+        "passwords_not_match": "密码不匹配"
+      },
+      "auth": {
+        "invalid_credentials": "邮箱或密码无效",
+        "account_not_verified": "登录前请先验证您的邮箱地址",
+        "account_suspended": "您的账户已被暂停",
+        "token_expired": "认证令牌已过期",
+        "token_invalid": "无效的认证令牌"
+      },
+      "general": {
+        "server_error": "发生内部服务器错误",
+        "not_found": "资源未找到",
+        "forbidden": "访问被拒绝"
+      }
+    },
+    "success": {
+      "auth": {
+        "login": "登录成功",
+        "register": "账户创建成功",
+        "logout": "退出登录成功",
+        "password_reset": "密码重置邮件已发送",
+        "email_verified": "邮箱验证成功"
+      }
+    },
+    "email": {
+      "verification": {
+        "subject": "欢迎！请验证您的邮箱地址",
+        "greeting": "您好 {{firstName}}，",
+        "message": "感谢您创建账户。请点击下面的按钮验证您的邮箱地址并激活您的账户。",
+        "button": "验证邮箱地址"
+      },
+      "reset_password": {
+        "subject": "重置您的密码",
+        "greeting": "您好 {{firstName}}，",
+        "message": "我们收到了重置密码的请求。点击下面的按钮创建新密码。",
+        "button": "重置密码"
+      },
+      "welcome": {
+        "subject": "欢迎使用Pelagornis OAuth！",
+        "greeting": "您好 {{firstName}}，",
+        "message": "欢迎使用Pelagornis OAuth！您的账户已成功验证，现在可以开始使用我们的服务了。"
+      }
+    }
+  }
