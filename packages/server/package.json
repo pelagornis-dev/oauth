@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": "true",
   "description": "Pelagornis OAuth Server",
-  "main": "dist/app.js",
+  "main": "dist/main/server.js",
   "scripts": {
-    "start": "node dist/app.js",
-    "dev": "ts-node-dev --respawn src/app.ts",
+    "start": "node dist/main/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/main/server.ts",
     "build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
