@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { AuthValidator } from '../validators/A';
+import { AuthValidator } from '../validators/AuthValidator';
 import { UserValidator } from '../validators/UserValidator';
 import { CommonValidator } from '../validators/CommonValidator';
 import { ValidationError } from '../../shared/errors/ValidationError';
